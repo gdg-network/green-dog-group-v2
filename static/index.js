@@ -29,6 +29,9 @@ form.addEventListener("submit", async (event) => {
     error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
     throw err;
+    backgroundImage:{
+        "banner-bg":"url('/static/bannerBg.jpg')"
+
   }
 
   const url = search(address.value, searchEngine.value);
