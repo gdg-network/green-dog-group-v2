@@ -30,7 +30,7 @@ form.addEventListener("submit", async (event) => {
     errorCode.textContent = err.toString();
     throw err;
     backgroundImage:{
-        "banner-bg":"url('/static/bannerBg.jpg')"
+        "banner-bg":"url('/static/logo (2).gif')"
 
   }
 
