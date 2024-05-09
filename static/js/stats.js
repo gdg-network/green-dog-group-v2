@@ -1,3 +1,7 @@
+/**
+ * @author mrdoob / http://mrdoob.com/
+ */
+
 var Stats = function () {
 
 	var startTime = Date.now(), prevTime = startTime;
