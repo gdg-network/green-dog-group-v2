@@ -1,3 +1,8 @@
+const isMobile = /iPhone|iPad|iPod|Android|Kindle/i.test(navigator.userAgent);
+
+if (isMobile) {
+  window.location.href = "m.html";
+}
 "use strict";
 /**
  * @type {HTMLFormElement}
