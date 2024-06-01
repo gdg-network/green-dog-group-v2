@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirect Page</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "/static/"; // Replace with your desired URL
-    };
-  </script>
+    <title>Login page</title>
 </head>
 <body>
-  <h1>Redirecting...</h1>
-  <p>If you are not redirected, <a href="/static/">click here</a>.</p>
+<form>
+    <label for="pswd">password</label>
+    <input type="password" id="pswd">
+    <input type="button" value="Submit" onclick="checkPswd();" />
+</form>
+<!--Function to check password the already set password is admin-->
+<script type="text/javascript">
+    function checkPswd() {
+        var confirmPassword = "admin";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             window.location="static/index.html";
+        }
+        else{
+            alert("Passwords do not match.");
+        }
+    }
+</script>
 </body>
 </html>
