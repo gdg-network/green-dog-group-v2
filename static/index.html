@@ -5,27 +5,6 @@
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
-        #particles-js {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        #wrapper {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-        }
-    </style>
 <script>
     var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type='image/x-icon';
@@ -66,12 +45,12 @@
     <script>
         particlesJS('particles-js', {
             particles: {
-                number: { value: 80 },
-                color: { value: ['#FFA500', '#FFFFFF'] }, // Orange and white
+                number: { value: 100 },
+                color: { value: ['#FFF', '#FFFFFF'] }, // Orange and white
                 shape: { type: 'circle' },
                 opacity: { value: 0.7 },
-                size: { value: 3 },
-                move: { enable: true, speed: 2 }
+                size: { value: 2 },
+                move: { enable: true, speed: 10}
             },
             interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
         });
