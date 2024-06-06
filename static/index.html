@@ -44,6 +44,38 @@
             <button onclick="blank();">Open in about:blank</button>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link rel="stylesheet" href="index.css">
+	       <meta charset="UTF-8">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: ['#FFA500', '#FFFFFF'] }, // Orange and white
+                shape: { type: 'circle' },
+                opacity: { value: 0.7 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2 }
+            },
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
+        });
+    </script>
       <div id="header">
          <img src="logo.gif" alt="logo">
          <title>GDG V2</title>
