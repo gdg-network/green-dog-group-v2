@@ -23,38 +23,37 @@
             <button onclick="blank();">Open in about:blank</button>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link rel="stylesheet" href="index.css">
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000; /* Set your desired background color */
+    }
+</style>
 	       <meta charset="UTF-8">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
-        #particles-js {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    </style>
 </head>
-    <div id="particles-js"></div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 300 },
-                color: { value: ['#FFFFFF', '#FFA500'] }, // Orange and white
-                shape: { type: 'circle' },
-                opacity: { value: 0.7 },
-                size: { value: 4 },
-                move: { enable: true, speed: 100}
-            },
-            interactivity: { detect_on: 'canvas', events: { onclick: { enable: true, mode: 'push' } } }
-        });
-    </script>
+<body>
+<!-- Particles.js container -->
+<div id="particles-js"></div>
+
+<!-- Import particles.js -->
+<script src="particles.js"></script>
+<script>
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 50 },
+            size: { value: 3 },
+            color: ['#ffcc00', '#ffffff'], // Set your desired particle colors (orange and white)
+            line_linked: { enable: false }
+        }
+    });
+</script>
+
       <div id="header">
          <img src="logo.gif" alt="logo">
          <title>GDG V2</title>
