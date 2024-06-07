@@ -144,41 +144,40 @@
 
     lmao()
   </script>
-		       <script>
+		          <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+    </style>
+
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+
+    <!-- Import particles.js -->
+    <script src="particles.js"></script>
+    <script>
         particlesJS('particles-js', {
             particles: {
-                number: { value: 80 },
-                color: { value: '#ffa500' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.7 },
+                number: { value: 50 },
                 size: { value: 3 },
-                move: { enable: true, speed: 2 }
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
+                color: ['#ffcc00', '#ffffff'],
+                line_linked: { enable: false }
+            }
+        });
+
+        // Add event listener to move particles on click
+        const particlesContainer = document.getElementById('particles-js');
+        particlesContainer.addEventListener('click', () => {
+            // Modify particle movement behavior here
+            // For example, change particle velocity or direction
         });
     </script>
-    <style>
-        .button-container {
-          position: fixed;
-          bottom: 30%;
-          left: 50%;
-          transform: translateX(-50%);
-          text-align: center;
-          padding: 10px;
-        }
-        
-        .button-container a.button {
-            border-radius: 5px;
-      border: 3px solid rgb(61, 59, 59);
-      font-family: Arial, sans-serif;
-  font-size: 100%;
-  background-color: rgb(53, 51, 51);
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 5px;
-        }
-      </style>
    </body>
 </html>
