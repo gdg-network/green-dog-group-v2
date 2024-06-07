@@ -23,36 +23,42 @@
             <button onclick="blank();">Open in about:blank</button>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link rel="stylesheet" href="index.css">
-<style>
-    body {
-        margin: 0;
-        overflow: hidden;
-    }
-    #particles-js {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #000; /* Set your desired background color */
-    }
-</style>
-	       <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
-<!-- Particles.js container -->
-<div id="particles-js"></div>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
 
-<!-- Import particles.js -->
-<script src="particles.js"></script>
-<script>
-    particlesJS('particles-js', {
-        particles: {
-            number: { value: 50 },
-            size: { value: 3 },
-            color: ['#ffcc00', '#ffffff'], // Set your desired particle colors (orange and white)
-            line_linked: { enable: false }
-        }
-    });
-</script>
+    <!-- Import particles.js -->
+    <script src="particles.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50 },
+                size: { value: 3 },
+                color: ['#ffcc00', '#ffffff'],
+                line_linked: { enable: false }
+            }
+        });
+
+        // Add event listener to move particles on click
+        const particlesContainer = document.getElementById('particles-js');
+        particlesContainer.addEventListener('click', () => {
+            // Modify particle movement behavior here
+            // For example, change particle velocity or direction
+        });
+    </script>
 
       <div id="header">
          <img src="logo.gif" alt="logo">
