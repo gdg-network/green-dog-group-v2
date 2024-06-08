@@ -14,7 +14,7 @@
     
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
     function blank(){
-      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://login.i-ready.com";})();
+      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://ohio.com";})();
           document.body.style.backgroundImage = `url('/static/bg.png')`
 
     }
@@ -52,7 +52,7 @@
                 size: { value: 2 },
                 move: { enable: true, speed: 10}
             },
-            interactivity: { detect_on: 'canvas', events: { onclick: { enable: true, mode: 'push' } } }
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
         });
     </script>
       <div id="header">
@@ -140,22 +140,14 @@
 		       <script>
         particlesJS('particles-js', {
             particles: {
-                number: { value: 100 },
-                color: { value: '#fffff' },
+                number: { value: 80 },
+                color: { value: '#ffffff' },
                 shape: { type: 'circle' },
                 opacity: { value: 0.7 },
                 size: { value: 3 },
-                move: { enable: true, speed: 10 }
+                move: { enable: true, speed: 2 }
             },
-            interactivity: { detect_on: 'canvas', events: { onclick: { enable: true, mode: 'push' } } }
-
-        });
-
-        // Add event listener to move particles on click
-        const particlesContainer = document.getElementById('particles-js');
-        particlesContainer.addEventListener('click', () => {
-            // Modify particle movement behavior here
-            // For example, change particle velocity or direction
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
         });
     </script>
     <style>
