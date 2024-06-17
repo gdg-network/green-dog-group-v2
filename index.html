@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -42,6 +43,7 @@
     </style>
     <title>Login Page</title>
 </head>
+</head>
 <body>
     <div class="container">
         <h1>Login</h1>
@@ -51,6 +53,7 @@
     <script>
         let loginAttempts = 0;
         const maxAttempts = 5;
+        let timer;
 
         function checkPassword() {
             const enteredPassword = document.getElementById("password").value;
@@ -64,9 +67,13 @@
 
                 if (remainingAttempts === 0) {
                     document.getElementById("password").disabled = true;
-                    alert("Login disabled. Please try again later.");
                 } else {
-                    alert(`Access denied. ${remainingAttempts} attempts left.`);
+                    // Start a 5-minute timer
+                    clearTimeout(timer);
+                    timer = setTimeout(() => {
+                        // Enable the password input after 5 minutes
+                        document.getElementById("password").disabled = false;
+                    }, 5 * 60 * 1000); // 5 minutes in milliseconds
                 }
             }
         }
