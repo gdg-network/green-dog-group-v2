@@ -4,7 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        /* Additional styles */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        /* Customize other styles as needed */
     </style>
     <title>Login Page</title>
 </head>
@@ -16,6 +50,7 @@
     </div>
     <script>
         let loginAttempts = 0;
+        let loginTimeout;
 
         function checkPassword() {
             const enteredPassword = document.getElementById("password").value;
@@ -28,6 +63,11 @@
                 if (loginAttempts >= 5) {
                     document.getElementById("password").disabled = true;
                     alert("Login disabled. Please try again later.");
+                    // Set a timeout to re-enable the password field after 5 minutes
+                    loginTimeout = setTimeout(() => {
+                        document.getElementById("password").disabled = false;
+                        loginAttempts = 0; // Reset login attempts
+                    }, 5 * 60 * 1000); // 5 minutes in milliseconds
                 } else {
                     alert("Incorrect password. Please try again.");
                 }
