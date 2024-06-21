@@ -1,3 +1,24 @@
+        .button-container {
+          position: fixed;
+          bottom: 30%;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          padding: 10px;
+        }
+        
+        .button-container a.button {
+            border-radius: 5px;
+      border: 3px solid rgb(61, 59, 59);
+      font-family: Arial, sans-serif;
+  font-size: 100%;
+  background-color: rgb(53, 51, 51);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 5px;
+        }
 #refresh-config {
   bottom: 5px;
   left: 5px;
