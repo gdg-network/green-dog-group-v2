@@ -118,11 +118,14 @@
          <h1></h1>
 
             
-        <form id="uv-form"">
-                  <i class="bi bi-search search" id="search"></i>
-      <form method="POST" id="uform" autocomplete="off" class="themesExcluded" style="z-index:1;">
-        <input type="text" name="url" class="form__input proxybar themesExcluded" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;z-index:1;" placeholder="Type URL or search query"><p class="splashText themesExcluded" id="placeholder"></p>
-          </form>
+    <form id="uv-form" class="flex-center">
+      <input
+        id="uv-search-engine"
+        value="https://www.google.com/search?q=%s"
+        type="hidden"
+      />
+      <input id="uv-address" type="text" placeholder="Search the web freely" />
+    </form>
           <div class="desc left-margin">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
