@@ -25,36 +25,86 @@
 <link rel="stylesheet" href="index.css">
 	       <meta charset="UTF-8">
     <style>
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
+            padding: 0;
             overflow: hidden;
+            background-image: linear-gradient(to bottom, #030420, #000000 70%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
         }
-        #particles-js {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
+        hr.thunder {
+            border: unset;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            animation-name: thunder;
+            animation-duration: var(--thunder-duration);
+            animation-timing-function: linear;
+            animation-delay: var(--thunder-delay);
+            animation-iteration-count: infinite;
+        }
+        hr:not(.thunder) {
+            width: 50px;
+            border-color: transparent;
+            border-right-color: rgba(255, 255, 255, 0.7);
+            border-right-width: 50px;
+            position: absolute;
+            bottom: 100%;
+            transform-origin: 100% 50%;
+            animation-name: rain;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rain {
+            from {
+                transform: rotate(105deg) translateX(0);
+            }
+            to {
+                transform: rotate(105deg) translateX(calc(100vh + 20px));
+            }
+        }
+        @keyframes thunder {
+            0% {
+                background-color: transparent;
+            }
+            1% {
+                background-color: white;
+            }
+            2% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            8% {
+                background-color: transparent;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 200 },
-                color: { value: ['#FFFFFF', '#FFA500'] }, // Orange and white
-                shape: { type: 'circle' },
-                opacity: { value: 0.7 },
-                size: { value: 2 },
-                move: { enable: true, speed: 10}
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
-        });
+        let hrElement;
+        let counter = 100;
+        for (let i = 0; i < counter; i++) {
+            hrElement = document.createElement("HR");
+            if (i == counter - 1) {
+                hrElement.className = "thunder";
+            } else {
+                hrElement.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+                hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
+                hrElement.style.animationDelay = Math.random() * 5 + "s";
+            }
+            document.body.appendChild(hrElement);
+        }
+
+        console.log(
+            "There are " +
+            document.querySelectorAll("hr").length +
+            " <hr> tags in this project :)"
+        );
     </script>
       <div id="header">
          <img src="logo.gif" alt="logo">
