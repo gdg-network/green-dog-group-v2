@@ -1,5 +1,5 @@
 self.__uv$config = {
-    prefix: '/greendog/gdg',
+    prefix: '/static/gdg',
     bare:'https://uv-bare-vercel.vercel.app/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
