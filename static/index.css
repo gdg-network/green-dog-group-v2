@@ -134,6 +134,16 @@ body {
     margin: 20px auto;
 }
 
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  backdrop-filter: blur(5px);
+  color: #8C52FF;
+}
+
 .form__input {
     padding: 10px;
     border: none;
