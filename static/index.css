@@ -96,7 +96,29 @@ body {
   padding-right: 30px;
   color: #8C52FF;
 }
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  backdrop-filter: blur(5px);
+  color: #8C52FF;
+}
 
+.navbar a {
+  float: left;
+  display: block;
+  color: #8C52FF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
 .footer a,
 .footer a:visited {
   cursor: pointer;
