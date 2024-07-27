@@ -1,4 +1,4 @@
-const isMobile = /iPhone|iPad|Android|Kindle/i.test(navigator.userAgent);
+const isMobile = /iPad|Android|Kindle/i.test(navigator.userAgent);
 
 if (isMobile) {
   window.location.href = "mobile.html";
