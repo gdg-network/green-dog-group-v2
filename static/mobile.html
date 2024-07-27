@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG V2</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #header {
+            text-align: center;
+            padding: 10px;
+        }
+        #header img {
+            max-width: 100%;
+            height: auto;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+            position: relative;
+            overflow: hidden;
+        }
+        button::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), rgba(128, 0, 128, 0.308));
+            z-index: -1;
+            transition: background 3s;
+        }
+        #uv-form {
+            margin-bottom: 20px;
+        }
+        #uv-address {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+        #footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="logo.gif" alt="logo">
+    </div>
+
+    <div id="content">
+        <h1>green dog group</h1>
+        <h3 id="haha"></h3>
+
+        <div class="button-container">
+            <button onclick="blank();">about:blank</button>
+            <button onclick="location.href='Apps.html'">apps</button>
+            <button onclick="location.href='Games.html'">games</button>
+        </div>
+
+        <div class="gyat">
+            <form id="uv-form">
+                <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/>
+                <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+            </form>
+            <div class="desc left-margin">
+                <p id="uv-error"></p>
+                <pre id="uv-error-code"></pre>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://discord.gg/yYFyg3c3r2"><img src="logodiscord.png" alt="discord"></a>
+            <a href="https://github.com/gdg-network/green-dog-group-v2"><img src="logogithub.png" alt="github"></a>
+            <a href="https://www.youtube.com/@GreenDogGroup"><img src="logoyoutube.png" alt="youtube"></a>
+            <a href="https://minecraft-pied.vercel.app/static/"><img src="logominecraft.png" alt="minecraft proxy"></a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2024 gdg-network (has Liam, Nick, Lucas, and ferret man).</p>
+    </div>
+
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+
+    <script>
+        function get_cookie(cookie_name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + cookie_name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        function blank() {
+            (function () {
+                var url = document.URL;
+                var urlObj = new window.URL(window.location.href);
+                win = window.open();
+                win.document.body.style.margin = "0";
+                win.document.body.style.height = "100vh";
+                var iframe = win.document.createElement("iframe");
+                iframe.style.border = "none";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.margin = "0";
+                iframe.referrerpolicy = "no-referrer";
+                iframe.allow = "fullscreen";
+                iframe.src = url.toString();
+                win.document.body.appendChild(iframe);
+                window.location.href = "https://classroom.google.com";
+            })();
+            document.body.style.backgroundImage = `url('/static/bg.png')`;
+        }
+      
+    </script>
+</body>
+</html>
