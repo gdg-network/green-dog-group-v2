@@ -1,7 +1,7 @@
 importScripts('/uv/uv.bundle.js');
 importScripts('/uv/uv.config.js');
 
-class UVServiceWorker extends EventEmitter {   
+class regesterSW extends EventEmitter {   
     constructor(config = __uv$config) {
         super();
         if (!config.bare) config.bare = '/bare/';
