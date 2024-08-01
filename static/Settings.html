@@ -30,5 +30,5 @@ body{font-family:'IBM Plex Sans',sans-serif;background-color:#f5f5f5;display:fle
 <script>
 document.getElementById('saveSettingsButton').addEventListener('click',function(){const panicKey=document.getElementById('panicKey').value;const panicUrl=document.getElementById('panicUrl').value;localStorage.setItem('panicKey',panicKey);localStorage.setItem('panicUrl',panicUrl);alert('Settings saved!')});document.addEventListener('DOMContentLoaded',function(){const savedPanicKey=localStorage.getItem('panicKey');const savedPanicUrl=localStorage.getItem('panicUrl');if(savedPanicKey){document.getElementById('panicKey').value=savedPanicKey}if(savedPanicUrl){document.getElementById('panicUrl').value=savedPanicUrl}});
 </script>
-<script src="./assets/panicKey.js" defer></script>
+<script src="/panicKey.js" defer></script>
 </body>
