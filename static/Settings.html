@@ -1,0 +1,33 @@
+<title>Settings</title>
+<style>
+body{font-family:'IBM Plex Sans',sans-serif;background-color:#f5f5f5;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}.settings-container{background-color:#000;padding:20px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);max-width:400px;width:101%}h1{font-size:24px;text-align:center;margin-bottom:20px}.input-group{margin-bottom:15px;width:95%}label{font-size:14px;display:block;margin-bottom:5px}input[type="text"]{width:100%;padding:10px;border:1px solid #2e2e2e;border-radius:5px;font-size:14px;background-color:#000;color:#fff}button{width:100%;padding:10px;background-color:#4CAF50;color:#fff;border:none;border-radius:5px;font-size:16px;cursor:pointer;margin-top:10px}button:hover{background-color:#45a049}
+</style>
+<body>
+<div class="navbar">
+<a href="/static/index.html" class="button">Home</a>
+<a href="/static/games.html" class="button">Games</a>
+<a href="/static/apps.html" class="button">Apps</a>
+<a href="/static/settings.html" class="button">Settings</a>
+</div>
+<div class="settings-container">
+<h1>Panic Key</h1>
+<div class="input-group">
+<label for="panicKey">Panic Key</label>
+<input type="text" id="panicKey" name="panicKey" placeholder="Enter Panic Key">
+</div>
+<div class="input-group">
+<label for="panicUrl">Panic URL</label>
+<input type="text" id="panicUrl" name="panicUrl" placeholder="Enter URL">
+</div>
+<button id="saveSettingsButton">Save</button>
+</div>
+<div class="settings-container"><h1>Cloak settings</h1>
+<div class="input-group">
+<label for="title">Set Title</label>
+<input type="text" id="title" name="setTitle">
+</div>
+</div>
+<script>
+document.getElementById('saveSettingsButton').addEventListener('click',function(){const panicKey=document.getElementById('panicKey').value;const panicUrl=document.getElementById('panicUrl').value;localStorage.setItem('panicKey',panicKey);localStorage.setItem('panicUrl',panicUrl);alert('Settings saved!')});document.addEventListener('DOMContentLoaded',function(){const savedPanicKey=localStorage.getItem('panicKey');const savedPanicUrl=localStorage.getItem('panicUrl');if(savedPanicKey){document.getElementById('panicKey').value=savedPanicKey}if(savedPanicUrl){document.getElementById('panicUrl').value=savedPanicUrl}});
+</script>
+</body>
