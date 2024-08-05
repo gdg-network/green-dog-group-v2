@@ -1,3 +1,88 @@
+/* mouse */
+.cursor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height);
+    transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2));
+    transition-duration: 125ms;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-property: width, height, transform;
+    transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.cursor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius);
+    opacity: var(--scale);
+    -webkit-transform: scale(var(--scale));
+    transform: scale(var(--scale));
+    transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1), 300ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+html:not(html:hover) .cursor::after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+@media (pointer: fine) {
+    .cursor {
+        display: block;
+    }
+}
+
+.planet:before,
+.planet:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgb(89, 0, 255);
+    top: -4px;
+    left: -4px;
+    border-color: hsl(253, 100%, 50%) transparent transparent transparent;
+    border-radius: 50%;
+    z-index: -8;
+    content: "";
+}
+
+.planet:after {
+    border-color: transparent transparent hsl(345, 70%, 50%) transparent;
+    border-radius: 50%;
+}
+
+.planet {
+    position: absolute;
+    display: block;
+    width: 85%;
+    height: 85%;
+    margin: 7.5%;
+    border-radius: 50%;
+    border-radius: 50%;
+    animation: 1s rotate ease-in-out infinite;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0);
+    opacity: 0.5;
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 /* Button Container */
 .button-container {
     position: fixed;
