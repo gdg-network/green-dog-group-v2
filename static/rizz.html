@@ -25,36 +25,6 @@
   <a>apps</a>
 </button>
 <style>
-	.cursor {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--width);
-    height: var(--height);
-    transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2));
-    transition-duration: 125ms;
-    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-    transition-property: width, height, transform;
-    transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
-    z-index: 1;
-    pointer-events: none;
-    will-change: transform;
-}
-
-.cursor::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--radius);
-    opacity: var(--scale);
-    -webkit-transform: scale(var(--scale));
-    transform: scale(var(--scale));
-    transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1), 300ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
-}
 button {
   background: transparent;
   color: #fff;
