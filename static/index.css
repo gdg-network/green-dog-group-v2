@@ -1,111 +1,176 @@
- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333333; /* Dark background */
-    color: #ffffff;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* 3D shadow effect */
-    z-index: 1000;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-}
-
-.navbar .logo img {
-    height: 40px;
-    width: 40px;
-    margin-right: 10px;
-}
-
-.navbar .nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.navbar .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-    color: #bbbbbb;
-}
-
-/* Main Content */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #777777; /* Light gray background */
-    color: #000000;
-    font-family: 'Arial', sans-serif;
-    padding-top: 60px; /* To prevent overlap with navbar */
-}
-
-.main-content img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    border: 5px solid #ffffff; /* White border around the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 3D effect for image */
-    background-image: url('your-image-url-here');
-    background-size: cover;
-    background-position: center;
-}
-
-.main-content h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.main-content h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333333;
-}
-
 /* Button Container */
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px;
 }
 
 .button-container a.button {
     border-radius: 5px;
-    border: 3px solid #3d3b3b;
+    border: 3px solid rgb(61, 59, 59);
     font-family: Arial, sans-serif;
     font-size: 100%;
-    background-color: #353333;
-    color: #ffffff;
+    background-color: rgb(53, 51, 51);
+    color: white;
     padding: 10px 20px;
     cursor: pointer;
     text-decoration: none;
     margin: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.button-container a.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+/* Refresh Config Button */
+#refresh-config {
+    bottom: 5px;
+    left: 5px;
+    position: fixed;
+    z-index: 1000;
 }
+
+/* Particles JS */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 99.7%;
+    background-image: url('https://x96.com/wp-content/uploads/2020/10/greenpuppy.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#particles-js h1 {
+    font-size: 15vw;
+    position: absolute;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: -10% 0 0 0;
+}
+
+#particles-js p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 5vw;
+    position: absolute;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px;
+}
+
+#particles-js input {
+    height: 80px;
+    width: 400px;
+    border-radius: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    border: 2px solid white;
+    margin: 9% 0 0 0;
+}
+
+#particles-js input::placeholder,
+#particles-js input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #FFF;
+    text-align: center;
+}
+
+/* Custom CSS for black theme */
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+#header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#header img {
+    width: 20%;
+    height: auto;
+}
+
+/* Content */
+#content {
+    text-align: center;
+    padding: 20px;
+    margin-top: -4%;
+}
+
+#content h1 {
+    font-size: 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+#searchbar {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  backdrop-filter: blur(5px);
+  color: #8C52FF;
+}
+
+.form__input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    background-color: #222;
+    text-align: center;
+    color: #fff;
+    cursor: cell;
+}
+
+.form__input::placeholder {
+    color: #aaa;
+}
+
+.form_input:hover {
+    cursor: cell;
+}
+
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* Footer */
 #footer {
@@ -117,12 +182,12 @@
     border-top-color: #99ccff;
     font-family: 'Open Sans', sans-serif;
     width: 100%;
-    height: 35px;
-    background-color: #000000;
+    height: 15px;
+    background-color: #000;
     padding-top: 7.5px;
     padding-bottom: 10px;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     font-size: 14px;
 }
 
@@ -133,9 +198,51 @@
 .fa {
     font-size: 24px;
     margin-right: 10px;
-    color: #ffffff;
+    color: #fff;
 }
 
 .fa:hover {
-    color: #aaaaaa;
+    color: #aaa;
 }
+.planet:before,
+.planet:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgb(89, 0, 255);
+    top: -4px;
+    left: -4px;
+    border-color: hsl(253, 100%, 50%) transparent transparent transparent;
+    border-radius: 50%;
+    z-index: -8;
+    content: "";
+}
+
+.planet:after {
+    border-color: transparent transparent hsl(345, 70%, 50%) transparent;
+    border-radius: 50%;
+}
+
+.planet {
+    position: absolute;
+    display: block;
+    width: 85%;
+    height: 85%;
+    margin: 7.5%;
+    border-radius: 50%;
+    border-radius: 50%;
+    animation: 1s rotate ease-in-out infinite;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0);
+    opacity: 0.5;
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
