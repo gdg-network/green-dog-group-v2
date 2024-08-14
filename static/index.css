@@ -10,9 +10,9 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* Updated Navbar */
 nav {
-    background-color: #333; /* Dark background */
+    background-color: #333;
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -94,7 +94,7 @@ nav ul li a:hover {
 .button-container a.button {
     border-radius: 5px;
     border: 3px solid #3d3b3b;
-    font-family: 'Poppins', sans-serif; /* Updated to match body */
+    font-family: 'Poppins', sans-serif;
     font-size: 100%;
     background-color: #353333;
     color: #ffffff;
@@ -119,7 +119,7 @@ nav ul li a:hover {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #99ccff;
-    font-family: 'Poppins', sans-serif; /* Updated to match body */
+    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 35px;
     background-color: #000000;
